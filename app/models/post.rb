@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
     validates :title, presence: true
     validates :content, presence: true
+    validates :description, presence: true
+    validates :pinned, inclusion: { in: [true, false] }
+    
     has_and_belongs_to_many :categories
   
     # Use Redcarpet gem to render Markdown content

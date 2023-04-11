@@ -10,6 +10,14 @@ module GraphqlBlogApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.action_controller.default_protect_from_forgery = true
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*' # Replace with your allowed origins
+        resource '/graphql', headers: :any, methods: [:post]
+      end
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

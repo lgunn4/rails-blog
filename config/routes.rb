@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   post "/graphql", to: "graphql#execute"
+  get "rails/csrf-token", to: "rails#csrf_token"
 end
