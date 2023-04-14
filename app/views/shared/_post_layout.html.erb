@@ -1,0 +1,21 @@
+      <!-- Blog posts section -->
+      <section class="section">
+        <div class="columns is-multiline is-vcentered">
+        <% @posts.each do |post| %>
+          <!-- Blog post 1 -->
+          <div class="column is-one-third">
+           <%= link_to post_path(post), class: 'my-link' do %>
+              <div class="card card-hover">
+                <div class="card-content">
+                  <div class="content">
+                    <p class="title is-4"><%= post.title %></p>
+                    <p class="subtitle is-6"><%= post.created_at.strftime("%B %d, %Y") %></p>
+                    <p><%= truncate(post.description, length: 120) %></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+          </div>
+          <% end %>
+        </div>
+      </section>

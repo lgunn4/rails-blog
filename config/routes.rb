@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   
   root "home#index"
+  get 'category/:id', to: 'categories#show', as: 'category'
   get 'posts/:id', to: 'posts#show', as: 'post'
 
   post "/graphql", to: "graphql#execute"
