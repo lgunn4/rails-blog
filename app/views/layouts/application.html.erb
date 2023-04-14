@@ -7,10 +7,28 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <%= javascript_importmap_tags %>
+
+    <style>
+      /* Custom CSS for card hover effect */
+      .card-hover {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .card-hover:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+  <section class="hero is-light">
+    <%= render 'shared/header' %>
+  </section>
+      <%= yield %>
+
   </body>
 </html>

@@ -72,6 +72,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bulma (0.1.0)
     capybara (3.39.0)
       addressable
       matrix
@@ -221,6 +222,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bulma
   capybara
   debug
   graphiql-rails
@@ -241,7 +243,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.0.2p107
 
 BUNDLED WITH
    2.3.22
