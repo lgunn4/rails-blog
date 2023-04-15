@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
     def set_header_details
         @categories = Category.all
         @blog_configuration = ::Configuration.first
+        puts params[:category_id]
+        @home_icon_color = params[:category_id].present? ? "is-link is-light" : "is-link"
 
-
-        @show_home_icon = params[:category_id].present?
+        puts @home_icon_color
     end
 end

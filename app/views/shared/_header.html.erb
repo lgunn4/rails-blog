@@ -18,12 +18,10 @@
     <h2 class="subtitle"><%= @blog_configuration.bio %></h2>
 
     <div class="tags is-centered">
-      <% if @show_home_icon %>
-        <%= link_to root_path do %>
-          <span class="tag is-link is-light">
-            <i class="fas fa-home"></i>
-          </span>
-        <% end %>
+      <%= link_to root_path do %>
+        <span class="tag <%= @home_icon_color %>">
+          <i class="fas fa-home"></i>
+        </span>
       <% end %>
       <% @categories.each do |category| %>
         <%= link_to category_path(category), class: 'my-link' do %>
