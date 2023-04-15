@@ -1,27 +1,38 @@
-  <div class="hero-body">
-    <div class="container has-text-centered">
-     <div class="columns is-centered">
-        <div class="column is-one-third mx-auto">
-          <!-- Profile image -->
-          <%= link_to root_path do %>
+<div class="hero-body">
+  <div class="container has-text-centered">
+    <div class="columns is-centered">
+      <div class="column is-one-third mx-auto">
+        <!-- Profile image -->
+        <%= link_to root_path do %>
           <figure class="image is-128x128" style="margin: 0 auto">
-            <img class="is-rounded" src=<%= @blog_configuration.profile_picture %> alt="Profile Image">
+            <img
+              class="is-rounded"
+              src=<%= @blog_configuration.profile_picture %>
+              alt="Profile Image"
+            >
           </figure>
-          <% end %>
-        </div>
-      </div>
-      <h1 class="title"><%= @blog_configuration.name %></h1>
-      <h2 class="subtitle"><%= @blog_configuration.bio %></h2>
-
-      <div class="tags is-centered">
-        <% @categories.each do |category| %>
-          <%= link_to category_path(category), class: 'my-link' do %>
-            <% if @category&.id == category.id %>
-              <span class="tag tag-clickable is-info"><%= category.name %></span>
-            <% else %>
-              <span class="tag tag-clickable is-info is-light"><%= category.name %></span>
-            <% end %>
-          <% end %>
         <% end %>
       </div>
     </div>
+    <h1 class="title"><%= @blog_configuration.name %></h1>
+    <h2 class="subtitle"><%= @blog_configuration.bio %></h2>
+
+    <div class="tags is-centered">
+      <% if @show_home_icon %>
+        <%= link_to root_path do %>
+          <span class="tag is-link is-light">
+            <i class="fas fa-home"></i>
+          </span>
+        <% end %>
+      <% end %>
+      <% @categories.each do |category| %>
+        <%= link_to category_path(category), class: 'my-link' do %>
+          <% if @category&.id == category.id %>
+            <span class="tag tag-clickable is-link"><%= category.name %></span>
+          <% else %>
+            <span class="tag tag-clickable is-link is-light"><%= category.name %></span>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

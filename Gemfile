@@ -53,6 +53,8 @@ gem 'graphiql-rails'
 gem 'redcarpet'
 gem 'rack-cors'
 gem 'bulma'
+gem 'erb-formatter'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
