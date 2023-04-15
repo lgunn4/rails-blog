@@ -1,26 +1,26 @@
- <!-- Blog post section -->
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="card">
-            <div class="card-content">
-              <div class="content">
-                <h3 class="title"><%= @post.title %></h3>
-                <p class="subtitle"><%= @post.created_at.strftime("%B %d, %Y") %></p>
-                <%= @post.rendered_content %>
-              </div>
+<!-- Blog post section -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <h3 class="title"><%= @post.title %></h3>
+              <p class="subtitle"><%= @post.created_at.strftime("%B %d, %Y") %></p>
+              <%= @post.rendered_content %>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-    <section class="section">
-    <div class="container">
-      <div class="has-text-centered">
-        <a href="/" class="button is-primary">Back to Home</a>
-      </div>
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <a href="/" class="button is-primary">Back to Home</a>
     </div>
-  </section>
+  </div>
+</section>
