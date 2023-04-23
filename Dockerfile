@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock to the container
 COPY Gemfile Gemfile.lock ./
+RUN chmod -R 777 ./
 
 # Install dependencies
 RUN bundle install
