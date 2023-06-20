@@ -9,6 +9,7 @@
 
 # Ignore log and tmp directories
 log/
+tmp/
 
 # Ignore unnecessary Docker build context files
 .dockerignore
