@@ -5,9 +5,10 @@ FROM ruby:3.2.2
 WORKDIR /app
 
 # Set production mode
-ENV RAILS_ENV production
-ENV RAILS_SERVE_STATIC_FILES true
-ENV RAILS_LOG_TO_STDOUT true
+# ENV SECRET_KEY_BASE 1
+# ENV RAILS_ENV production
+# ENV RAILS_SERVE_STATIC_FILES true
+# ENV RAILS_LOG_TO_STDOUT true
 
 # Copy the Gemfile and Gemfile.lock to the container
 COPY Gemfile Gemfile.lock ./
