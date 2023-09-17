@@ -29,5 +29,6 @@ module GraphqlBlogApi
 
     config.hosts << "blog.loft-cloud.com"
     config.hosts << "blog.logangunn.com"
+    config.hosts << "code.loft-cloud.com"
   end
 end
