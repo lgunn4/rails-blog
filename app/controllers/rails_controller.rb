@@ -1,8 +1,7 @@
 class RailsController < ApplicationController
+  def csrf_token
+    response.headers["X-CSRF-Token"] = form_authenticity_token
 
-    def csrf_token
-        response.headers['X-CSRF-Token'] = form_authenticity_token
-
-        response
-    end
+    response
+  end
 end

@@ -54,6 +54,8 @@ gem 'redcarpet'
 gem 'rack-cors'
 gem 'bulma'
 gem 'erb-formatter'
+gem 'rubocop'
+gem 'rubocop-rails'
 
 
 group :development, :test do

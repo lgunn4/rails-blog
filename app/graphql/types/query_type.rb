@@ -11,7 +11,7 @@ module Types
     end
 
     def post(id:)
-      Post.find_by(id: id)
+      Post.find_by(id:)
     end
 
     field :categories, [Types::CategoryType], null: false
@@ -25,7 +25,7 @@ module Types
     end
 
     def category(id:)
-      Category.find_by(id: id)
+      Category.find_by(id:)
     end
 
     field :configuration, Types::ConfigurationType, null: true
