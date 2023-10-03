@@ -56,7 +56,9 @@ gem 'bulma'
 gem 'erb-formatter'
 gem 'rubocop'
 gem 'rubocop-rails'
-
+gem 'trestle'
+gem 'trestle-simplemde', '~> 0.1.2'
+gem 'trestle-auth'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
