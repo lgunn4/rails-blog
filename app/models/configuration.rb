@@ -5,6 +5,6 @@ class Configuration < ApplicationRecord
   validates :profile_picture, presence: true
 
   def there_can_only_be_one
-    errors[:base] << "There can only be one" if Configuration.count > 0
+    errors[:base] << "There can only be one" if Configuration.count.positive?
   end
 end
