@@ -30,5 +30,7 @@ module GraphqlBlogApi
     config.hosts << "blog.loft-cloud.com"
     config.hosts << "blog.logangunn.com"
     config.hosts << "code.loft-cloud.com"
+    config.hosts << 'localhost'
+    config.hosts << '127.0.0.1'
   end
 end
