@@ -18,6 +18,7 @@ Trestle.resource(:posts) do
     
     row do
       col { check_box :pinned}
+      col { check_box :published}
       col { datetime_field :updated_at }
       col { datetime_field :created_at }
     end

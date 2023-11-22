@@ -20,4 +20,8 @@ post2.categories << category1
 post2.categories << category2
 post3.categories << category3
 
+
+User.create(email: 'admin@example.com', password: 'password', first_name: 'Admin', last_name: 'User')
+
+
 Rails.logger.debug "Seed data has been created successfully!"
