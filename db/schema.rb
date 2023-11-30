@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_30_031252) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_30_033045) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "color"
     t.integer "priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "handle"
+    t.index ["handle"], name: "index_categories_on_handle", unique: true
   end
 
   create_table "categories_posts", id: false, force: :cascade do |t|

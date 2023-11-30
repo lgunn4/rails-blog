@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   end
   
   root "home#index"
-  get 'category/:category_id', to: 'categories#show', as: 'category'
+  get 'category/:handle', to: 'categories#show', as: 'category'
   get 'posts/:handle', to: 'posts#show', as: 'post'
 
   post "/graphql", to: "graphql#execute"
   get "rails/csrf-token", to: "rails#csrf_token"
 
   resources :posts, param: :handle, only: [:show]
+  resources :categories, param: :handle, only: [:show]
 end

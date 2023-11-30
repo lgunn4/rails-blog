@@ -27,7 +27,7 @@
         </span>
       <% end %>
       <% @categories.each do |category| %>
-        <%= link_to category_path(category), class: 'my-link' do %>
+        <%= link_to category_path(handle: category.handle), class: 'my-link' do %>
           <% if @category&.id == category.id %>
             <span class="tag tag-clickable is-link"><%= category.name %></span>
           <% else %>

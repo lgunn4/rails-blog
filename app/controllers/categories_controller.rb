@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def show
-    @category = Category.find(params[:category_id])
+    @category = Category.find_by(handle: params[:handle])
     @posts = @category.posts.where(published: true)
   end
 end
