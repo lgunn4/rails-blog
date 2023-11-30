@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   
   root "home#index"
   get 'category/:category_id', to: 'categories#show', as: 'category'
-  get 'posts/:id', to: 'posts#show', as: 'post'
+  get 'posts/:handle', to: 'posts#show', as: 'post'
 
   post "/graphql", to: "graphql#execute"
   get "rails/csrf-token", to: "rails#csrf_token"
+
+  resources :posts, param: :handle, only: [:show]
 end
