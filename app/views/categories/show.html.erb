@@ -1,5 +1,5 @@
-<% if @posts.any? %>
-    <%= render 'shared/post_layout' %>
+<% if @posts_by_year.any? %>
+  <%= render 'shared/post_layout' %>
 <% else %>
-    <%= render 'shared/no_results' %>
+  <%= render 'shared/no_results' %>
 <% end %>

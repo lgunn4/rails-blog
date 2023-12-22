@@ -8,6 +8,14 @@ class Post < ApplicationRecord
 
   before_save :generate_handle
 
+  def self.posts_by_year
+    where(published: true).each_with_object({}) do |post, posts_by_year|
+      post_year = post.created_at.year
+      posts_by_year[post_year] ||= []
+      posts_by_year[post_year].append(post)
+    end.sort_by { |key, _| key }.reverse.to_h
+  end
+
   # Use Redcarpet gem to render Markdown content
   def rendered_content
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
@@ -17,6 +25,6 @@ class Post < ApplicationRecord
   private
 
   def generate_handle
-    self.handle = title.downcase.tr(' ', '-')
+    self.handle = title.downcase.tr(" ", "-")
   end
 end

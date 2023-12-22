@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find_by(handle: params[:handle])
-    @posts = @category.posts.where(published: true)
+    @posts_by_year = @category.posts_by_year
   end
 end

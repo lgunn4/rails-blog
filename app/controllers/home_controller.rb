@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.where(published: true)
+    @posts_by_year = Post.posts_by_year
   end
 end
