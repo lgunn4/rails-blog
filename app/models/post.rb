@@ -9,12 +9,10 @@ class Post < ApplicationRecord
   before_save :generate_handle
 
   def self.posts_by_year
-    where(published: true).each_with_object({}) do |post, posts_by_year|
+    where(published: true).order(created_at: :asc).each_with_object({}) do |post, posts_by_year|
       post_year = post.created_at.year
       posts_by_year[post_year] ||= []
       posts_by_year[post_year].append(post)
-    end.each do |year, posts|
-      posts.sort_by! { |post| post.created_at }
     end.sort_by { |key, _| key }.reverse.to_h
   end
 
