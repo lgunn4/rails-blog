@@ -92,4 +92,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.hosts << "192.53.121.67"
+  config.hosts << "blog2.logangunn.com"
 end
