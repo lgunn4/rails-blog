@@ -23,10 +23,6 @@ RUN bundle install
 # Copy the rest of the application code to the container
 COPY . .
 
-# Create tmp directories
-RUN mkdir tmp && mkdir tmp/pids && mkdir tmp/sockets && mkdir tmp/cache
-RUN chmod 777 -R tmp
-
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /usr/local/bin/
 
